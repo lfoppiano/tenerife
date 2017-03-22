@@ -1,0 +1,48 @@
+group 'org.grobid.sandbox'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M3'
+    testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.0-M3'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.8.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.1'
+    compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.3'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.7.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.7.2'
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE") {
+//        exclude module: "spring-boot-starter-logging"
+        exclude module: "logback-classic"
+    }
+//    compile("org.springframework.boot:spring-boot-starter-actuator:1.5.2.RELEASE") {
+//        exclude module: "logback-classic"
+//    }
+
+}
+
+

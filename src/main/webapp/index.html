@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IPerion demo GROBID + (N)ERD</title>
+    <link rel="icon" type="image/x-icon" href="resources/img/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico"/>
+
+    <script src="resources/js/jquery-1.10.0.min.js"></script>
+    <script src="resources/js/jquery.form.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" media="screen"/>
+    <link rel="stylesheet" href="resources/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/css/style.css"/>
+    <link rel="stylesheet" href="resources/css/awesome-bootstrap-checkbox.css"/>
+
+    <script type="text/javascript" src="resources/bootstrap/js/prettify.js"></script>
+    <!--<script type="text/javascript" src="resources/js/vkbeautify.js"></script>-->
+
+    <!-- to render wiki syntax in html -->
+    <script type="text/javascript" src="resources/js/wiki2html.js"></script>
+    <link href="resources/css/wiky.css" rel="stylesheet" type="text/css">
+
+    <!-- The Javascript library -->
+    <script src="nerd/nerd.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="content">
+        <div class="page-header">
+            <h1><span style="color:#333;">IPERION CH</span></h1>
+            <span style="padding-left:40px;color:#AE0C0C;">Information mining and extraction playground</span>
+            <h2>
+                <small>
+                    <a class="section-active" id="about" href="#">About</a> <span
+                        style="padding-left:20px;">&nbsp;</span>
+                    <a class="section-not-active" id="services" href="#">Service</a> <span
+                        style="padding-left:20px;">&nbsp;</span>
+                </small>
+            </h2>
+        </div>
+
+        <table border="0">
+            <tr>
+                <td style="width:100px;align:left;vertical-align: top;"><h3><span id="subTitle"></span></h3></td>
+                <td style="align:left;vertical-align: top;">
+                    <div id="divAbout">
+                        <p>
+                            <large><b>GROBID</b> GeneRation Of BIbliographic Data</large>
+                        </p>
+                        <p>
+                            <large><b>NERD</b> Named Entity Recognition and Disambiguation</large>
+                        </p>
+                        <p>Contact:
+                            <a style="color:#BC0E0E;"
+                               href="mailto:patrice.lopez@science-miner.com?subject=NERD">Patrice Lopez</a>,
+
+                            <a style="color:#BC0E0E;"
+                               href="mailto:luca.foppiano@science-miner.com?subject=NERD">Luca Foppiano</a>.
+                        </p>
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="divServices">
+            <form class="form-horizontal" method="post" id="gbdForm" target=_blank accept-charset="UTF-8">
+                <table border="0">
+                    <tr>
+                        <td><span id="label">&nbsp;</span></td>
+                        <td>
+                            <div id="field">
+
+                                <div class="fileupload fileupload-new" data-provides="fileupload" id="fileInputDiv">
+                                    <div class="input-append">
+                                        <div class="uneditable-input span4" style="white-space:normal;">
+                                            <i class="icon-file fileupload-exists" style="white-space:normal;"></i>
+                                            <span class="fileupload-preview" style="white-space:normal;"></span>
+                                        </div>
+                                        <span class=""/>
+
+                                        <span class="btn btn-file">
+                                            <span class="fileupload-new" id="labelFile">Select file</span>
+                                            <span class="fileupload-exists">Change</span>
+                                            <input id="input" name="input" type="file" />
+                                        </span>
+                                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td colspan="2"><input id="submitRequest" value="Submit" class="btn"/></td>
+                    </tr>
+                </table>
+
+                <br>
+                <div id="requestResult"></div>
+        </div>
+
+        <footer>
+            <p><!--span style="color:#848484;">&copy; SCIENCE-MINER - 2016 </span--></p>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>

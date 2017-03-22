@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd MMM yyyy HH:mm.ss} [%-5p] %-25c{1} - %m\n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.mongodb" level="warn">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="org.springframework" level="warn">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="org.entitycooking.algorithm.signature.phonetic" level="error">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="org.entitycooking.integration.client" level="error">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="org.apache.commons.beanutils.converters" level="warn">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="smile" level="warn">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+    </Loggers>
+</Configuration>
