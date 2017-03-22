@@ -255,8 +255,12 @@ var nerd = (function ($) {
 
         var localID = $(this).attr('id');
         var paragraphID = $(this).attr('info');
+        var position = $(this).position().top;
 
-        console.log("fetching anotationID: " + $(this).attr("id") + ", paragraphID: " + $(this).attr('info'));
+        console.log("position: " + position);
+        position = position - 400; //$(this).parent().position().top;
+        console.log("position adjusted: " + position);
+        console.log("fetching annotationID: " + $(this).attr("id") + ", paragraphID: " + $(this).attr('info'));
 
         var ind1 = localID.indexOf('-');
         var localEntityNumber = parseInt(localID.substring(ind1 + 1, localID.length));
@@ -308,8 +312,13 @@ var nerd = (function ($) {
             if (entity.sense)
                 sense = entity.sense.fineSense;
 
-            string += "<div class='info-sense-box " + colorLabel +
-                "'><h4 style='color:#FFF;padding-left:10px;'>" + content.toUpperCase() + "</h4>";
+            var customLocationStyle = "";
+            if (position > 0) {
+                customLocationStyle = "style='vertical-align:top;position:relative;top:" + position + ";'"
+            }
+
+            string += "<div class='info-sense-box " + colorLabel + "' " + customLocationStyle + ">" +
+                "<h4 style='color:#FFF;padding-left:10px;'>" + content.toUpperCase() + "</h4>";
             string += "<div class='container-fluid' style='background-color:#F9F9F9;color:#70695C;border:padding:5px;margin-top:5px;'>" +
                 "<table style='width:100%;background-color:#fff;border:0px'><tr style='background-color:#fff;border:0px;'><td style='background-color:#fff;border:0px;'>";
 
