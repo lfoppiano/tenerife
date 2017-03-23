@@ -142,7 +142,12 @@ var nerd = (function ($) {
                         end = lastMaxIndex;
                         lastMaxIndex = start;
                         // the entity is associated to the previous map
-                        entityMap[annotationId].push(entities[m]);
+                        if(entityMap[annotationId]) {
+                            entityMap[annotationId].push(entities[m]);
+                        }else {
+                            console.log("Something went wrong with the entity: " + entities[m])
+                        }
+
                     }
                     else {
                         string = string.substring(0, start)

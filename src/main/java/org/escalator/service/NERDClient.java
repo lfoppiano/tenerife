@@ -19,7 +19,8 @@ public class NERDClient {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(NERDClient.class);
 
-    private String prefix = "http://localhost:8090";
+//    private String prefix = "http://localhost:8090";
+    private String prefix = "http://traces1.saclay.inria.fr/nerd";
 
     public String getNERDAnnotations(String text) {
         String json = null;
