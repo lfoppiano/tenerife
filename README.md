@@ -7,5 +7,11 @@ This project is a sample playground to demonstrate what can be done by combining
 2. Bounding boxes visualisation directly on rendered PDF
 
 
+## Run 
+To run it just type 
+
+> gradle bootRun
+
+
 ## Licence
 This service is licences under Apache 2.0 
